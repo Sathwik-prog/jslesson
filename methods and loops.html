@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Methods, Loops, and Switch Project</title>
+</head>
+<body>
+  <h2>JavaScript Methods, Loops & Switch Project</h2>
+  <pre id="output"></pre>
+  <script>
+    let output = "";
+
+    // 1. String Methods Section
+    let userName = "Sathwik";
+    output += "Original Name: " + userName + "\n";
+    output += "Uppercase: " + userName.toUpperCase() + "\n";
+    output += "Lowercase: " + userName.toLowerCase() + "\n";
+    output += "First 3 Letters: " + userName.substring(0,3) + "\n";
+    output += "Index of 'K': " + userName.indexOf('K') + "\n";
+    output += "Length: " + userName.length + "\n\n";
+
+    // 2. Loops with Random Numbers
+    output += "Random Numbers:\n";
+    let sum = 0;
+    for(let i=1; i<=5; i++) {
+      let rand = Math.floor(Math.random()*100) + 1;
+      output += "  Number " + i + ": " + rand + "\n";
+      sum += rand;
+    }
+    output += "Sum of numbers: " + sum + "\n\n";
+
+    // 3. Current Date Display
+    let today = new Date();
+    output += "Current Date: " + today.toDateString() + "\n";
+    output += "Current Time: " + today.toLocaleTimeString() + "\n\n";
+
+    // 4. Rounded Random Number
+    let randFloat = Math.random() * 100;
+    output += "Random float value: " + randFloat + "\n";
+    output += "Rounded to 2 decimals: " + randFloat.toFixed(2) + "\n\n";
+
+    // 5. Weekday Name using Switch
+    let weekdayNum = today.getDay();
+    let dayName = "";
+    switch (weekdayNum) {
+      case 0: dayName = "Sunday"; break;
+      case 1: dayName = "Monday"; break;
+      case 2: dayName = "Tuesday"; break;
+      case 3: dayName = "Wednesday"; break;
+      case 4: dayName = "Thursday"; break;
+      case 5: dayName = "Friday"; break;
+      case 6: dayName = "Saturday"; break;
+      default: dayName = "Unknown";
+    }
+    output += "It's " + dayName + " today!\n";
+
+    // Show output
+    document.getElementById("output").innerText = output;
+  </script>
+</body>
+</html>
