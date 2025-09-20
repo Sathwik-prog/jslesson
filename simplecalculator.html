@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,3 +57,63 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      background-color: lightyellow;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      margin: 5px;
+      padding: 5px;
+      background-color: lightgreen;
+    }
+    #result {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Simple Calculator</h2>
+
+  <input id="num1" type="number"> 
+  <input id="num2" type="number"><br><br>
+
+  <button onclick="add()">Add</button>
+  <button onclick="sub()">Subtract</button>
+  <button onclick="mul()">Multiply</button>
+  <button onclick="div()">Divide</button>
+
+  <p>Result: <span id="result">0</span></p>
+
+  <script>
+    function add() {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      document.getElementById("result").innerHTML = Number(a) + Number(b);
+    }
+    function sub() {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      document.getElementById("result").innerHTML = Number(a) - Number(b);
+    }
+    function mul() {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      document.getElementById("result").innerHTML = Number(a) * Number(b);
+    }
+    function div() {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      document.getElementById("result").innerHTML = Number(a) / Number(b);
+    }
+  </script>
+</body>
+</html>
+>>>>>>> 1648b79fd805a959f5554e943808fcd915c9bb74

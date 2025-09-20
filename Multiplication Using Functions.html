@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,3 +96,102 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Using Functions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 8px;
+      margin: 6px 0;
+      width: 100%;
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #output {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>Multiplication Using Functions</h1>
+  <div class="container">
+    <label>Enter first number:</label>
+    <input type="number" id="num1">
+    <label>Enter second number:</label>
+    <input type="number" id="num2">
+    <button onclick="doMultiplication()">Multiply</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    // 1️⃣ Basic Function
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    // 2️⃣ Scope of Variables
+    let globalVar = 2; // Global variable
+    function multiplyWithScope(x, y) {
+      let localVar = 3; // Local variable
+      return x * y * globalVar * localVar;
+    }
+
+    // 3️⃣ Expression Function
+    const multiplyExpression = function(a, b) {
+      return a * b;
+    };
+
+    // Function to handle button click
+    function doMultiplication() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById("output").innerHTML = "⚠️ Please enter valid numbers!";
+        return;
+      }
+
+      // Using all three types of functions
+      let basicResult = multiply(n1, n2);
+      let scopeResult = multiplyWithScope(n1, n2);
+      let expressionResult = multiplyExpression(n1, n2);
+
+      // Show results
+      document.getElementById("output").innerHTML = `
+        ✅ Basic Function: ${basicResult} <br>
+        ✅ With Scope (global + local vars): ${scopeResult} <br>
+        ✅ Expression Function: ${expressionResult}
+      `;
+    }
+  </script>
+</body>
+</html>
+>>>>>>> 1648b79fd805a959f5554e943808fcd915c9bb74
