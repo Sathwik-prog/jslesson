@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Combined JavaScript Examples</title>
+</head>
+<body>
+  <h2>Finding the Largest Number with Argument Objects</h2>
+  <p id="largest"></p>
+
+  <h2>JavaScript Math Object Methods</h2>
+  <p id="mathResults"></p>
+
+  <h2>JavaScript Objects and its Properties</h2>
+  <p>There are two different ways to access an object property.</p>
+  <p>You can use .property or ["property"]</p>
+  <p id="demo"></p>
+
+  <h2>Sum of Arguments & Trigonometric Degrees</h2>
+  <p id="sumResult"></p>
+  <p id="trigResult"></p>
+
+  <script type="text/javascript">
+    // --- 1. Finding Largest Number with Argument Objects ---
+    function findMax() {
+      var max = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+          max = arguments[i];
+        }
+      }
+      return max;
+    }
+    document.getElementById("largest").innerHTML = 
+      "Largest number: " + findMax(4, 5, 6);
+
+    // --- 2. JavaScript Math Object Methods ---
+    var mathOutput = "";
+    var value = Math.abs(20);
+    mathOutput += "Demo Test Value (abs): " + value + "<br>";
+
+    value = Math.acos(-1);
+    mathOutput += "Demo1 Test Value (acos): " + value + "<br>";
+
+    value = Math.asin(1);
+    mathOutput += "Demo2 Test Value (asin): " + value + "<br>";
+
+    value = Math.atan(0.5);
+    mathOutput += "Demo3 Test Value (atan): " + value + "<br>";
+
+    document.getElementById("mathResults").innerHTML = mathOutput;
+
+    // --- 3. JavaScript Objects and its Properties ---
+    var person = {
+      firstName: "I",
+      age: 20
+    };
+    document.getElementById("demo").innerHTML = 
+      person.firstName + " am " + person.age + " years old";
+
+    // --- 4. Sum of Arguments & Trigonometric Degrees ---
+    function sumArguments() {
+      var sum = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+      }
+      return sum;
+    }
+
+    function degToRad(deg) {
+      return deg * (Math.PI / 180);
+    }
+
+    var sum = sumArguments(10, 20, 30, 40); // example numbers
+    document.getElementById("sumResult").innerHTML = 
+      "Sum of arguments: " + sum;
+
+    var degree = 30; // example degree
+    var rad = degToRad(degree);
+
+    var sinValue = Math.sin(rad);
+    var cosValue = Math.cos(rad);
+    var tanValue = Math.tan(rad);
+
+    document.getElementById("trigResult").innerHTML =
+      "For " + degree + "°:<br>" +
+      "sin = " + sinValue.toFixed(4) + "<br>" +
+      "cos = " + cosValue.toFixed(4) + "<br>" +
+      "tan = " + tanValue.toFixed(4);
+  </script>
+</body>
+</html>
