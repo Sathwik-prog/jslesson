@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Smallest Number</title>
+</head>
+<body>
+  <h2>Find the Smallest Number</h2>
+
+  <button onclick="findSmallest(12, 5, 8, 3, 9)">Click to Find Smallest</button>
+  <p id="result"></p>
+
+  <script>
+    function findSmallest() {
+      var smallest = arguments[0];
+
+      for (var i = 1; i < arguments.length; i++) {
+        if (arguments[i] < smallest) {
+          smallest = arguments[i];
+        }
+      }
+
+      document.getElementById("result").innerText = "Smallest number is: " + smallest;
+    }
+  </script>
+</body>
+</html>
